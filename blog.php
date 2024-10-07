@@ -21,10 +21,11 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - McCall Southern Photography</title>
+<head>
+    <!-- Updated title for branding and SEO -->
+    <title>McCall Southern Photography - Professional Photographer Portfolio & Services</title>
+
+    <!-- Standard meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,19 +58,38 @@ $result = $conn->query($sql);
 
     <!-- Favicon for branding -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
+    <!-- Replace with actual favicon -->
 </head>
-<body>
 
-<div class="nav nav-overlay">
+
+<body class="bg-black">
+
+    <div class="preloader">
+        <svg>
+	  <g>
+	    <path d="M 50,100 A 1,1 0 0 1 50,0"/>
+	  </g>
+	  <g>
+	    <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
+	  </g>
+	  <defs>
+	    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+	      <stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1" />
+	      <stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" />
+	    </linearGradient>
+	  </defs>
+	</svg>
+    </div>
+
+    <div class="nav nav-overlay">
         <div class="nav__content">
-        <ul class="nav__list">
-                <li class="nav__list-item"><a href="index.html" class="hover-target">Home</a></li>
+            <ul class="nav__list">
+                <li class="nav__list-item active-nav"><a href="index.html" class="hover-target">Home</a></li>
                 <li class="nav__list-item"><a href="about.html" class="hover-target">About</a></li>
                 <li class="nav__list-item"><a href="services.html" class="hover-target">Services</a></li>
                 <li class="nav__list-item"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
                 <li class="nav__list-item"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
-                <li class="nav__list-item active-nav"><a href="blog.php" class="hover-target">Blog</a></li>
+                <li class="nav__list-item"><a href="blog.php" class="hover-target">Blog</a></li>
                 <li class="nav__list-item"><a href="faq.html" class="hover-target">FAQ</a></li>
                 <li class="nav__list-item"><a href="shop.php" class="hover-target">Shop</a></li>
                 <li class="nav__list-item"><a href="cart.php" class="hover-target">Cart</a></li>
@@ -77,6 +97,7 @@ $result = $conn->query($sql);
             </ul>
         </div>
     </div>
+
     <header id="header" class="light">
         <div id="header-wrap">
             <nav id="navbar">
@@ -106,7 +127,7 @@ $result = $conn->query($sql);
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-title">Our Latest Blogs</h1>
+                    <h1 class="page-title" style="color: white">Our Latest Blogs</h1>
                         <div class="breadcrumbs">
                             <span class="item"><a href="index-2.html">Home /</a></span>
                             <span class="item">Blog</span>
