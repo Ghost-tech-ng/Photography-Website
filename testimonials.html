@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - McCall Southern Photography</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="fonts/icomoon/icomoon.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* General page styles */
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1,
+        h2 {
+            color: #FF9350;
+            /* Accent color */
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .testimonial-section {
+            padding: 50px 20px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-item {
+            background-color: #111;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .testimonial-content {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .client-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #FF9350;
+        }
+        
+        .client-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .client-location {
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            .testimonial-item {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="nav nav-overlay">
+        <div class="nav__content">
+            <ul class="nav__list">
+                <li class="nav__list-item"><a href="index.html" class="hover-target">Home</a></li>
+                <li class="nav__list-item"><a href="about.html" class="hover-target">About</a></li>
+                <li class="nav__list-item"><a href="services.html" class="hover-target">Services</a></li>
+                <li class="nav__list-item"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
+                <li class="nav__list-item active-nav"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
+                <li class="nav__list-item"><a href="blog.php" class="hover-target">Blog</a></li>
+                <li class="nav__list-item"><a href="faq.html" class="hover-target">FAQ</a></li>
+                <li class="nav__list-item"><a href="shop.php" class="hover-target">Shop</a></li>
+                <li class="nav__list-item"><a href="cart.php" class="hover-target">Cart</a></li>
+                <li class="nav__list-item"><a href="contact.html" class="hover-target">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <header id="header" class="light">
+        <div id="header-wrap">
+            <nav id="navbar">
+                <div class="main-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="McCall Southern Photography Logo" style="max-width: 150px; height: auto;">
+                    </a>
+                </div>
+                <div class="action-menu">
+                    <input id="menu-toggle" type="checkbox" />
+                    <label class="menu-btn" for="menu-toggle">
+                        <span></span>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Testimonial Section -->
+    <section class="testimonial-section">
+        <h1>What Our Clients Say</h1>
+        <div class="testimonials-grid">
+            <!-- Testimonial Item 1 -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    “Working with McCall Southern Photography was an absolute delight. They captured our wedding day perfectly, and the images are timeless treasures we will cherish forever.”
+                </div>
+                <div class="client-info">
+                    <img src="images/client1.jpg" alt="Client Photo" class="client-photo">
+                    <div>
+                        <div class="client-name">John & Emily</div>
+                        <div class="client-location">Charleston, SC</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Item 2 -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    “Their attention to detail and creative vision made our family portraits unique and beautiful. We couldn’t be happier with the results!”
+                </div>
+                <div class="client-info">
+                    <img src="images/client2.jpg" alt="Client Photo" class="client-photo">
+                    <div>
+                        <div class="client-name">Sarah Wilson</div>
+                        <div class="client-location">Savannah, GA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Item 3 -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    “From the moment we reached out to McCall Southern, the customer service was exceptional. Their professionalism shines through in every photograph they take.”
+                </div>
+                <div class="client-info">
+                    <img src="images/client3.jpg" alt="Client Photo" class="client-photo">
+                    <div>
+                        <div class="client-name">Mark & Jessica</div>
+                        <div class="client-location">Atlanta, GA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Item 4 -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    “I highly recommend McCall Southern Photography for any event or special occasion. They have an incredible eye for detail and know how to capture those special moments.”
+                </div>
+                <div class="client-info">
+                    <img src="images/client4.jpg" alt="Client Photo" class="client-photo">
+                    <div>
+                        <div class="client-name">Olivia Thompson</div>
+                        <div class="client-location">Hilton Head, SC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer" class="bg-black light padding-xlarge" style="background-image: url(images/photography.jpg); background-position: right; background-repeat: no-repeat;">
+        <div class="container">
+            <div class="row">
+                <div class="contact-information mt-4 d-flex">
+                    <div class="contact-detail col-md-6">
+                        <div class="detail mr-6 mb-4">
+                            <ul class="list-unstyled colored-grey text-large">
+                                <li>123 Southern Ave, Charleston, SC 29401, USA</li>
+                                <li>+1 843-555-1234 / +1 843-555-5678</li>
+                                <li><a href="mailto:info@mccallsouthern.com" class="colored">info@mccallsouthern.com</a></li>
+                                <li>© 2024 McCall Southern Photography. All rights reserved.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p-0">
+                        <div class="container">
+                            <div class="row">
+                                <h3>Quick Contact</h3>
+                                <form action="https://www.mccallsouthern.com/contact.php" class="contact-form d-flex flex-wrap mt-4">
+                                    <input type="text" name="name" placeholder="Your Name" class="name mb-3" required>
+                                    <input type="email" name="email" placeholder="Your Email" class="mb-3" required>
+                                    <textarea name="message" placeholder="Your Message" style="height: 150px;" required></textarea>
+
+                                    <div class="pix_btn btn-click text-center mt-5">
+                                        <button type="submit" class="btn btn-pill btn-large btn-outline-light mr-3" data-hover="click">
+                                            <span>Send Message</span>
+                                            <i class="icon icon-paper-plane"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script files -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+
+</body>
+
+</html>
