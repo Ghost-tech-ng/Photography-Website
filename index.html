@@ -39,65 +39,159 @@
     <!-- Favicon for branding -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Replace with actual favicon -->
+    <style>
+        /* General header styles */
+        
+        #header {
+            background-color: #000;
+            padding: 10px 0;
+            color: #fff;
+        }
+        
+        #header-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Main navbar */
+        
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        /* Logo */
+        
+        .main-logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        /* Navigation list */
+        
+        .nav__list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .navigate {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        .navigate a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        /* Hover effect for links */
+        
+        .navigate a:hover {
+            color: #1e90ff;
+        }
+        /* Dropdown menu */
+        
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #111;
+            list-style: none;
+            top: 40px;
+            left: 0;
+            padding: 0;
+            z-index: 10;
+        }
+        
+        .dropdown .dropdown-menu li {
+            padding: 10px;
+        }
+        
+        .dropdown .dropdown-menu li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Active navigation link */
+        
+        .active-nav a {
+            color: #1e90ff;
+            font-weight: bold;
+        }
+        /* Mobile responsiveness */
+        
+        @media (max-width: 768px) {
+            .nav__list {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navigate {
+                margin: 10px 0;
+            }
+            .dropdown .dropdown-menu {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+            .action-menu {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
-
 <body class="bg-black">
-
-    <div class="preloader">
-        <svg>
-	  <g>
-	    <path d="M 50,100 A 1,1 0 0 1 50,0"/>
-	  </g>
-	  <g>
-	    <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
-	  </g>
-	  <defs>
-	    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-	      <stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1" />
-	      <stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" />
-	    </linearGradient>
-	  </defs>
-	</svg>
-    </div>
-
-    <div class="nav nav-overlay">
-        <div class="nav__content">
-            <ul class="nav__list">
-                <li class="nav__list-item active-nav"><a href="index.html" class="hover-target">Home</a></li>
-                <li class="nav__list-item"><a href="about.html" class="hover-target">About</a></li>
-                <li class="nav__list-item"><a href="services.html" class="hover-target">Services</a></li>
-                <li class="nav__list-item"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
-                <li class="nav__list-item"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
-                <li class="nav__list-item"><a href="blog.php" class="hover-target">Blog</a></li>
-                <li class="nav__list-item"><a href="faq.html" class="hover-target">FAQ</a></li>
-                <li class="nav__list-item"><a href="shop.php" class="hover-target">Shop</a></li>
-                <li class="nav__list-item"><a href="cart.php" class="hover-target">Cart</a></li>
-                <li class="nav__list-item"><a href="contact.html" class="hover-target">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <header id="header" class="light">
+    <div class="preloader"><svg><g><path d="M 50,100 A 1,1 0 0 1 50,0"/></g><g><path d="M 50,75 A 1,1 0 0 0 50,-25"/></g><defs><linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" /></linearGradient></defs></svg></div>
+    <header id="header" class="dark">
         <div id="header-wrap">
             <nav id="navbar">
+                <!-- Logo -->
                 <div class="main-logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="McCall Southern Photography Logo" style="max-width: 150px; height: auto;">
+                        <img src="images/logo.png" alt="Logo" style="max-width: 150px; height: auto;">
                     </a>
                 </div>
 
+                <!-- Navigation List -->
+                <ul class="nav__list">
+                    <li class="navigate"><a href="index.html" class="hover-target">Home</a></li>
+                    <li class="navigate"><a href="about.html" class="hover-target">About</a></li>
+                    <li class="navigate"><a href="services.html" class="hover-target">Services</a></li>
+                    <li class="navigate"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
+                    <li class="navigate"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
 
+                    <!-- Dropdown for Other Pages -->
+                    <li class="navigate dropdown">
+                        <a href="#" class="hover-target">Other Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.php" class="hover-target">Blog</a></li>
+                            <li><a href="faq.html" class="hover-target">FAQ</a></li>
+                            <li><a href="shop.php" class="hover-target">Shop</a></li>
+                            <li><a href="cart.php" class="hover-target">Cart</a></li>
+                            <li><a href="contact.html" class="hover-target">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Action menu for mobile (Hamburger Icon) -->
                 <div class="action-menu">
                     <input id="menu-toggle" type="checkbox" />
                     <label class="menu-btn" for="menu-toggle">
                         <span></span>
                     </label>
                 </div>
-                <!--action-menu-->
             </nav>
         </div>
-        <!--header-wrap-->
     </header>
 
 
@@ -105,28 +199,20 @@
         <div class="container">
             <div class="row">
                 <div class="billboard-content d-flex mt-6 align-center">
-
                     <div class="light text-center">
                         <!-- Updated title with business name -->
-                        <h1 class="section-title mb-4">Hi, <strong>I'm McCall Southern</strong></h1>
-
-                        <!-- Updated typewriter effect with business-related roles -->
-                        <span class="designation typewrite" data-period="500" data-type='[ "a Photographer", "Visual Storyteller", "Capturing Timeless Moments" ]'></span>
-
+                        <h1 class="section-title mb-4">Hi,
+                            <strong>I'm McCall Southern</strong></h1>
+                        <!-- Updated typewriter effect with business-related roles --><span class="designation typewrite" data-period="500" data-type='[ "a Photographer", "Visual Storyteller", "Capturing Timeless Moments" ]'></span>
                         <!-- Updated description with relevant content -->
                         <p class="pt-3">I specialize in capturing life's special moments through timeless photography. Whether it's a wedding, portrait, or landscape, I strive to tell your story through the lens.</p>
-
                         <div class="button-container d-flex justify-content-center mt-5">
-                            <!-- Updated buttons with appropriate links -->
-                            <a href="portfolio.html" class="btn btn-pill btn-large btn-outline-light mr-3"><span>View Portfolio</span><i class="icon icon-arrow-down2"></i></a>
-
-                            <a href="contact.html" class="btn btn-pill btn-large btn-outline-light mr-3"><span>Contact Me</span><i class="icon icon-arrow-down2"></i></a>
-                        </div>
+                            <!-- Updated buttons with appropriate links --><a href="portfolio.html" class="btn btn-pill btn-large btn-outline-light mr-3"><span>View Portfolio</span><i class="icon icon-arrow-down2"></i></a><a href="contact.html" class="btn btn-pill btn-large btn-outline-light mr-3"><span>Contact Me</span><i class="icon icon-arrow-down2"></i></a></div>
                         <!--button-box-->
                     </div>
                     <!--text-content-->
-
-                    <!-- Social links remain unchanged, but you can update them with the business' actual links -->
+                    <!-- Social links remain unchanged,
+        but you can update them with the business' actual links -->
                     <div class="social-links">
                         <ul class="list-unstyled d-flex">
                             <li class="mr-3"><a href="#"><i class="icon icon-facebook m-1"></i></a></li>
@@ -140,113 +226,66 @@
             </div>
         </div>
     </div>
-
     <!--billboard-->
-
     <section class="portfolio-wrap fancyboxeffect light padding-medium">
-
-
         <div class="d-flex flex-wrap col-md-12">
             <div class="portfolio-container">
                 <div>
-                    <a class="image-link" rel="gallery" href="images/largemodel1.jpg">
-                        <img src="images/model1.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" rel="gallery" href="images/largemodel1.jpg"><img src="images/model1.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel2.jpg">
-                        <img src="images/model2.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel2.jpg"><img src="images/model2.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel3.jpg">
-                        <img src="images/model3.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel3.jpg"><img src="images/model3.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel4.jpg">
-                        <img src="images/model4.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel4.jpg"><img src="images/model4.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel5.jpg">
-                        <img src="images/model5.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel5.jpg"><img src="images/model5.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel6.jpg">
-                        <img src="images/model1.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel6.jpg"><img src="images/model1.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel5.jpg">
-                        <img src="images/model5.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel5.jpg"><img src="images/model5.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel2.jpg">
-                        <img src="images/model2.jpg" alt="model" class="galleryImg">
-                    </a>
-                </div>
-
-                <div>
-                    <a class="image-link" href="images/largemodel2.jpg">
-                        <img src="images/model2.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel2.jpg"><img src="images/model2.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel3.jpg">
-                        <img src="images/model3.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel2.jpg"><img src="images/model2.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel4.jpg">
-                        <img src="images/model4.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel3.jpg"><img src="images/model3.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel2.jpg">
-                        <img src="images/model2.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel4.jpg"><img src="images/model4.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel3.jpg">
-                        <img src="images/model3.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel2.jpg"><img src="images/model2.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel4.jpg">
-                        <img src="images/model4.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel3.jpg"><img src="images/model3.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel2.jpg">
-                        <img src="images/model2.jpg" alt="model" class="galleryImg">
-                    </a>
-                </div>
-
-                <div>
-                    <a class="image-link" href="images/largemodel1.jpg">
-                        <img src="images/model1.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel4.jpg"><img src="images/model4.jpg" alt="model" class="galleryImg"></a>
                 </div>
                 <div>
-                    <a class="image-link" href="images/largemodel5.jpg">
-                        <img src="images/model5.jpg" alt="model" class="galleryImg">
-                    </a>
+                    <a class="image-link" href="images/largemodel2.jpg"><img src="images/model2.jpg" alt="model" class="galleryImg"></a>
                 </div>
-
+                <div>
+                    <a class="image-link" href="images/largemodel1.jpg"><img src="images/model1.jpg" alt="model" class="galleryImg"></a>
+                </div>
+                <div>
+                    <a class="image-link" href="images/largemodel5.jpg"><img src="images/model5.jpg" alt="model" class="galleryImg"></a>
+                </div>
             </div>
         </div>
         <!--col-md-12-->
-
-        <div class="pix_btn btn-click text-center">
-            <a href="#" class="btn btn-pill btn-large btn-outline-light mr-3"><span>View all</span> 
-		<i class="icon icon-arrow-thin-right"></i></a>
-        </div>
-
+        <div class="pix_btn btn-click text-center"><a href="#" class="btn btn-pill btn-large btn-outline-light mr-3"><span>View all</span><i class="icon icon-arrow-thin-right"></i></a></div>
     </section>
-
     <section class="about-us bg-grey light padding-xlarge">
         <div class="container">
             <div class="row">
@@ -271,16 +310,9 @@
                 </div>
                 <!--pg-features-->
             </div>
-            <div class="pix_btn btn-click text-center mt-5">
-                <a href="contact.html" class="btn btn-pill btn-large btn-outline-light mr-3" data-hover="click">
-                    <span>Book a Session</span>
-                    <i class="icon icon-check"></i>
-                </a>
-            </div>
+            <div class="pix_btn btn-click text-center mt-5"><a href="contact.html" class="btn btn-pill btn-large btn-outline-light mr-3" data-hover="click"><span>Book a Session</span><i class="icon icon-check"></i></a></div>
         </div>
     </section>
-
-
     <footer id="footer" class="bg-black light padding-xlarge" style="background-image: url(images/photography.jpg); background-position: right; background-repeat: no-repeat;">
         <div class="container">
             <div class="row">
@@ -288,8 +320,9 @@
                     <div class="contact-detail col-md-6">
                         <div class="detail mr-6 mb-4">
                             <ul class="list-unstyled colored-grey text-large">
-                                <li>123 Southern Ave, Charleston, SC 29401, USA</li>
-                                <li>+1 843-555-1234 / +1 843-555-5678</li>
+                                <li>123 Southern Ave, Charleston, SC 29401, USA
+                                </li>
+                                <li>+1 843-555-1234 /+1 843-555-5678</li>
                                 <li><a href="mailto:info@mccallsouthern.com" class="colored">info@mccallsouthern.com</a></li>
                                 <li>© 2024 McCall Southern Photography. All rights reserved.</li>
                             </ul>
@@ -297,22 +330,13 @@
                         <!--detail-->
                     </div>
                     <!--contact-detail-->
-
                     <div class="col-md-6 p-0">
                         <div class="container">
                             <div class="row">
                                 <h3>Quick Contact</h3>
-                                <form action="https://www.mccallsouthern.com/contact.php" class="contact-form d-flex flex-wrap mt-4">
-                                    <input type="text" name="name" placeholder="Your Name" class="name mb-3" required>
-                                    <input type="email" name="email" placeholder="Your Email" class="mb-3" required>
-                                    <textarea name="message" placeholder="Your Message" style="height: 150px;" required></textarea>
-
-                                    <div class="pix_btn btn-click text-center mt-5">
-                                        <button type="submit" class="btn btn-pill btn-large btn-outline-light mr-3" data-hover="click">
-                                            <span>Send Message</span>
-                                            <i class="icon icon-paper-plane"></i>
-                                        </button>
-                                    </div>
+                                <form action="https://www.mccallsouthern.com/contact.php" class="contact-form d-flex flex-wrap mt-4"><input type="text" name="name" placeholder="Your Name" class="name mb-3" required><input type="email" name="email" placeholder="Your Email" class="mb-3" required><textarea name="message" placeholder="Your Message" style="height: 150px;"
+                                        required></textarea>
+                                    <div class="pix_btn btn-click text-center mt-5"><button type="submit" class="btn btn-pill btn-large btn-outline-light mr-3" data-hover="click"><span>Send Message</span><i class="icon icon-paper-plane"></i></button></div>
                                 </form>
                             </div>
                         </div>
@@ -323,12 +347,9 @@
             </div>
         </div>
     </footer>
-
     <script src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-
 </body>
-
 
 </html>

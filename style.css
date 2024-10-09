@@ -99,6 +99,7 @@ template {
 }
 
 a {
+    color: #fff;
     background-color: transparent;
     outline: 0;
     text-decoration: none;
@@ -352,7 +353,7 @@ body.no-scroll {
 }
 
 a {
-    color: #111;
+    color: #ffffff;
 }
 
 a:hover {
@@ -387,7 +388,7 @@ ul li.active a {
 }
 
 ul li a {
-    color: #151515;
+    color: #fff2f2;
 }
 
 ul li a:hover {
