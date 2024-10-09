@@ -629,7 +629,7 @@ h6,
 .h6 {
     font-weight: 700;
     line-height: 1.2;
-    color: #333;
+    color: #ffffff;
 }
 
 h4,
@@ -722,7 +722,9 @@ table,
 fieldset,
 blockquote,
 address,
-pre {}
+pre {
+    color: #fff;
+}
 
 p:empty {
     display: none;

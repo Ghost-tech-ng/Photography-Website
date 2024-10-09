@@ -145,7 +145,7 @@ if (isset($_GET['clear_cart'])) {
             <button type="submit" class="buy-button">Checkout</button>
         </form>
     <?php else: ?>
-        <p>Your cart is empty.</p>
+        <h5><p>Your cart is empty.</p></h5>
     <?php endif; ?>
 </div>
 
