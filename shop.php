@@ -59,6 +59,8 @@ $total_pages = ceil($row[0] / $results_per_page);
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
     <link rel="stylesheet" type="text/css" href="fonts/icomoon/icomoon.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     <!-- Favicon for branding -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">

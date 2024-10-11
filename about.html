@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
     <link rel="stylesheet" type="text/css" href="fonts/icomoon/icomoon.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Favicon for branding -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -127,6 +128,8 @@
             color: #fff;
             font-size: 24px;
             padding: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
         
         .cart-icon:hover {
@@ -170,28 +173,33 @@
             .menu-toggle:checked+.menu-icon+.nav__list {
                 display: flex;
             }
+            /* Ensure cart icon is visible */
+            .action-menu {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+            }
         }
     </style>
 </head>
-
 
 <body class="bg-black">
 
     <div class="preloader">
         <svg>
-	  <g>
-	    <path d="M 50,100 A 1,1 0 0 1 50,0"/>
-	  </g>
-	  <g>
-	    <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
-	  </g>
-	  <defs>
-	    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-	      <stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1" />
-	      <stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" />
-	    </linearGradient>
-	  </defs>
-	</svg>
+                <g>
+                    <path d="M 50,100 A 1,1 0 0 1 50,0" />
+                </g>
+                <g>
+                    <path d="M 50,75 A 1,1 0 0 0 50,-25" />
+                </g>
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
     </div>
 
     <header id="header" class="dark">
@@ -207,8 +215,8 @@
                 <!-- Action menu for mobile (Hamburger Icon) -->
                 <!-- <input type="checkbox" id="menu-toggle" class="menu-toggle"> -->
                 <label for="menu-toggle" class="menu-icon">
-                    <i class="fas fa-bars"></i> <!-- Font Awesome hamburger icon -->
-                </label>
+                        <i class="fas fa-bars"></i> <!-- Font Awesome hamburger icon -->
+                    </label>
 
                 <!-- Navigation List -->
                 <ul class="nav__list">
