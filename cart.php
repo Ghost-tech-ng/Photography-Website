@@ -59,6 +59,237 @@ if (isset($_GET['clear_cart'])) {
     <!-- Favicon for branding -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Replace with actual favicon -->
+
+    <style>
+        .shop-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .shop-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .shop-item {
+            background-color: #000;
+            border-radius: 8px;
+            color: white;
+            padding: 15px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .shop-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .shop-item h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .shop-item .price {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .remove-button,
+        .clear-cart-button,
+        .buy-button {
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            background-color: #1e90ff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-button {
+            background-color: #ff4d4d;
+        }
+
+        .shop-container form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .clear-cart-button {
+            background-color: #ff4d4d;
+        }
+
+        .shop-item img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .alert {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .shop-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .shop-item {
+                width: 100%;
+            }
+        }
+         /* General header styles */
+        
+         #header {
+            background-color: #000;
+            padding: 10px 0;
+            color: #fff;
+        }
+        
+        #header-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        /* Logo */
+        
+        .main-logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        /* Navigation list */
+        
+        .nav__list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .navigate {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        .navigate a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        /* Hover effect for links */
+        
+        .navigate a:hover {
+            color: #1e90ff;
+        }
+        /* Dropdown menu */
+        
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #111;
+            list-style: none;
+            top: 40px;
+            left: 0;
+            padding: 0;
+            z-index: 10;
+        }
+        
+        .dropdown .dropdown-menu li {
+            padding: 10px;
+        }
+        
+        .dropdown .dropdown-menu li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Cart icon styles */
+        
+        .cart-icon {
+            color: #fff;
+            font-size: 24px;
+            padding: 10px;
+        }
+        
+        .cart-icon:hover {
+            color: #1e90ff;
+        }
+        /* Hamburger icon */
+        
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+        }
+        /* Mobile responsiveness */
+        
+        @media (max-width: 768px) {
+            #navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav__list {
+                display: none;
+                /* Hide the menu on mobile by default */
+                flex-direction: column;
+                width: 100%;
+            }
+            .navigate {
+                margin: 10px 0;
+                width: 100%;
+            }
+            .dropdown .dropdown-menu {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+            /* Show the hamburger icon */
+            .menu-icon {
+                display: block;
+            }
+            /* When checkbox is checked, show the menu */
+            .menu-toggle:checked+.menu-icon+.nav__list {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 
 
@@ -81,73 +312,95 @@ if (isset($_GET['clear_cart'])) {
 	</svg>
     </div>
 
-    <div class="nav nav-overlay">
-        <div class="nav__content">
-            <ul class="nav__list">
-                <li class="nav__list-item"><a href="index.html" class="hover-target">Home</a></li>
-                <li class="nav__list-item"><a href="about.html" class="hover-target">About</a></li>
-                <li class="nav__list-item"><a href="services.html" class="hover-target">Services</a></li>
-                <li class="nav__list-item"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
-                <li class="nav__list-item"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
-                <li class="nav__list-item"><a href="blog.php" class="hover-target">Blog</a></li>
-                <li class="nav__list-item"><a href="faq.html" class="hover-target">FAQ</a></li>
-                <li class="nav__list-item"><a href="shop.php" class="hover-target">Shop</a></li>
-                <li class="nav__list-item active-nav"><a href="cart.php" class="hover-target">Cart</a></li>
-                <li class="nav__list-item"><a href="contact.html" class="hover-target">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <header id="header" class="light">
+    <header id="header" class="dark">
         <div id="header-wrap">
             <nav id="navbar">
+                <!-- Logo -->
                 <div class="main-logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="McCall Southern Photography Logo" style="max-width: 150px; height: auto;">
+                        <img src="images/logo.png" alt="Logo" style="max-width: 150px; height: auto;">
                     </a>
                 </div>
 
+                <!-- Action menu for mobile (Hamburger Icon) -->
+                <!-- <input type="checkbox" id="menu-toggle" class="menu-toggle"> -->
+                <label for="menu-toggle" class="menu-icon">
+                    <i class="fas fa-bars"></i> <!-- Font Awesome hamburger icon -->
+                </label>
 
+                <!-- Navigation List -->
+                <ul class="nav__list">
+                    <li class="navigate"><a href="index.html" class="hover-target">Home</a></li>
+                    <li class="navigate"><a href="about.html" class="hover-target">About</a></li>
+                    <li class="navigate"><a href="services.html" class="hover-target">Services</a></li>
+                    <li class="navigate"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
+                    <li class="navigate"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
+
+                    <!-- Dropdown for Other Pages -->
+                    <li class="navigate dropdown">
+                        <a href="#" class="hover-target">Other Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.php" class="hover-target">Blog</a></li>
+                            <li><a href="faq.html" class="hover-target">FAQ</a></li>
+                            <li><a href="shop.php" class="hover-target">Shop</a></li>
+                            <li><a href="contact.html" class="hover-target">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Cart Icon -->
                 <div class="action-menu">
-                    <input id="menu-toggle" type="checkbox" />
-                    <label class="menu-btn" for="menu-toggle">
-                        <span></span>
-                    </label>
+                    <a href="cart.php" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
                 </div>
-                <!--action-menu-->
             </nav>
         </div>
-        <!--header-wrap-->
     </header>
 
 
-<div class="shop-container">
-    <h1>Your Cart</h1>
 
-    <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
-        <div class="shop-grid">
-            <?php foreach ($_SESSION['cart'] as $item): ?>
-                <div class="shop-item">
-                    <h3><?php echo $item['title']; ?></h3>
-                    <p class="price">$<?php echo number_format($item['price'], 2); ?></p>
-                    <a href="cart.php?remove_id=<?php echo $item['id']; ?>" class="remove-button">Remove</a>
-                </div>
-            <?php endforeach; ?>
+
+    <?php if (isset($notification)): ?>
+        <div class="alert">
+            <?php echo $notification; ?>
         </div>
-
-        <!-- Clear Cart button -->
-        <form action="cart.php" method="GET">
-            <button type="submit" name="clear_cart" class="clear-cart-button">Clear Cart</button>
-        </form>
-
-        <form action="checkout.php" method="POST">
-            <input type="email" name="email" placeholder="Enter your email for delivery" required>
-            <button type="submit" class="buy-button">Checkout</button>
-        </form>
-    <?php else: ?>
-        <h5><p>Your cart is empty.</p></h5>
     <?php endif; ?>
-</div>
+
+    <div class="shop-container">
+        <h1>Your Cart</h1>
+
+        <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
+            <div class="shop-grid">
+                <?php foreach ($_SESSION['cart'] as $item): ?>
+                    <div class="shop-item">
+                    <?php if (!empty($item['photo_url'])): ?>
+    <img src="<?php echo htmlspecialchars($item['photo_url']); ?>" alt="Product Image" style="max-width: 100px;">
+<?php else: ?>
+    <img src="images/default-placeholder.png" alt="Default Image" style="max-width: 100px;">
+<?php endif; ?>
+                        <h3><?php echo $item['title']; ?></h3>
+                        <p class="price">$<?php echo number_format($item['price'], 2); ?></p>
+                        <a href="cart.php?remove_id=<?php echo $item['id']; ?>" class="remove-button">Remove</a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <!-- Clear Cart button -->
+            <form action="cart.php" method="GET">
+                <button type="submit" name="clear_cart" class="clear-cart-button">Clear Cart</button>
+            </form>
+
+            <!-- Checkout -->
+            <form action="checkout.php" method="POST">
+                <input type="email" name="email" placeholder="Enter your email for delivery" required>
+                <button type="submit" class="buy-button">Checkout</button>
+            </form>
+        <?php else: ?>
+            <h5><p>Your cart is empty.</p></h5>
+        <?php endif; ?>
+    </div>
+
 
 <footer id="footer" class="bg-black light padding-xlarge" style="background-image: url(images/photography.jpg); background-position: right; background-repeat: no-repeat;">
     <div class="container">

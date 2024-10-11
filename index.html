@@ -29,6 +29,7 @@
 
     <!-- Canonical URL for SEO -->
     <link rel="canonical" href="https://yourwebsite.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -55,7 +56,6 @@
             justify-content: space-between;
             align-items: center;
         }
-        /* Main navbar */
         
         #navbar {
             display: flex;
@@ -122,29 +122,54 @@
         .dropdown:hover .dropdown-menu {
             display: block;
         }
-        /* Active navigation link */
+        /* Cart icon styles */
         
-        .active-nav a {
+        .cart-icon {
+            color: #fff;
+            font-size: 24px;
+            padding: 10px;
+        }
+        
+        .cart-icon:hover {
             color: #1e90ff;
-            font-weight: bold;
+        }
+        /* Hamburger icon */
+        
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
         }
         /* Mobile responsiveness */
         
         @media (max-width: 768px) {
-            .nav__list {
+            #navbar {
                 flex-direction: column;
                 align-items: flex-start;
             }
+            .nav__list {
+                display: none;
+                /* Hide the menu on mobile by default */
+                flex-direction: column;
+                width: 100%;
+            }
             .navigate {
                 margin: 10px 0;
+                width: 100%;
             }
             .dropdown .dropdown-menu {
                 position: relative;
                 top: 0;
                 left: 0;
             }
-            .action-menu {
+            /* Show the hamburger icon */
+            .menu-icon {
                 display: block;
+            }
+            /* When checkbox is checked, show the menu */
+            .menu-toggle:checked+.menu-icon+.nav__list {
+                display: flex;
             }
         }
     </style>
@@ -162,6 +187,12 @@
                     </a>
                 </div>
 
+                <!-- Action menu for mobile (Hamburger Icon) -->
+                <!-- <input type="checkbox" id="menu-toggle" class="menu-toggle"> -->
+                <label for="menu-toggle" class="menu-icon">
+                    <i class="fas fa-bars"></i> <!-- Font Awesome hamburger icon -->
+                </label>
+
                 <!-- Navigation List -->
                 <ul class="nav__list">
                     <li class="navigate"><a href="index.html" class="hover-target">Home</a></li>
@@ -177,22 +208,21 @@
                             <li><a href="blog.php" class="hover-target">Blog</a></li>
                             <li><a href="faq.html" class="hover-target">FAQ</a></li>
                             <li><a href="shop.php" class="hover-target">Shop</a></li>
-                            <li><a href="cart.php" class="hover-target">Cart</a></li>
                             <li><a href="contact.html" class="hover-target">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
 
-                <!-- Action menu for mobile (Hamburger Icon) -->
+                <!-- Cart Icon -->
                 <div class="action-menu">
-                    <input id="menu-toggle" type="checkbox" />
-                    <label class="menu-btn" for="menu-toggle">
-                        <span></span>
-                    </label>
+                    <a href="cart.php" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
                 </div>
             </nav>
         </div>
     </header>
+
 
 
     <div id="billboard">

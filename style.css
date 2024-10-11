@@ -50,6 +50,23 @@ body {
     height: 100%;
 }
 
+
+/* Style the cart icon */
+
+.cart-icon {
+    color: #fff;
+    font-size: 24px;
+    /* Adjust size as necessary */
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.cart-icon:hover {
+    color: #1e90ff;
+    /* Change color on hover */
+}
+
 html {
     font-size: 100%;
     font-family: sans-serif;
