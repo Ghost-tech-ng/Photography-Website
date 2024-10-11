@@ -5,12 +5,14 @@ session_start(); // Start the session
 $photo_id = $_POST['photo_id'];
 $photo_title = $_POST['photo_title'];
 $photo_price = $_POST['photo_price'];
+$photo_url = $_POST['photo_url']; // Get the photo URL from the form
 
-// Create an item array
+// Create an item array with image URL
 $item = [
     'id' => $photo_id,
     'title' => $photo_title,
     'price' => $photo_price,
+    'photo_url' => $photo_url, // Add photo URL to the item
 ];
 
 // If cart is not set, initialize it

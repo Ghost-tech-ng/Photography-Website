@@ -38,71 +38,193 @@
 
     <!-- Favicon for branding -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <!-- Replace with actual favicon -->
+    <style>
+        /* General header styles */
+        
+        #header {
+            background-color: #000;
+            padding: 10px 0;
+            color: #fff;
+        }
+        
+        #header-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        /* Logo */
+        
+        .main-logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        /* Navigation list */
+        
+        .nav__list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .navigate {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        .navigate a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        /* Hover effect for links */
+        
+        .navigate a:hover {
+            color: #1e90ff;
+        }
+        /* Dropdown menu */
+        
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #111;
+            list-style: none;
+            top: 40px;
+            left: 0;
+            padding: 0;
+            z-index: 10;
+        }
+        
+        .dropdown .dropdown-menu li {
+            padding: 10px;
+        }
+        
+        .dropdown .dropdown-menu li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Cart icon styles */
+        
+        .cart-icon {
+            color: #fff;
+            font-size: 24px;
+            padding: 10px;
+        }
+        
+        .cart-icon:hover {
+            color: #1e90ff;
+        }
+        /* Hamburger icon */
+        
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+        }
+        /* Mobile responsiveness */
+        
+        @media (max-width: 768px) {
+            #navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav__list {
+                display: none;
+                /* Hide the menu on mobile by default */
+                flex-direction: column;
+                width: 100%;
+            }
+            .navigate {
+                margin: 10px 0;
+                width: 100%;
+            }
+            .dropdown .dropdown-menu {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+            /* Show the hamburger icon */
+            .menu-icon {
+                display: block;
+            }
+            /* When checkbox is checked, show the menu */
+            .menu-toggle:checked+.menu-icon+.nav__list {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-black light">
-
-    <div class="preloader">
-        <svg>
-	  <g>
-	    <path d="M 50,100 A 1,1 0 0 1 50,0"/>
-	  </g>
-	  <g>
-	    <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
-	  </g>
-	  <defs>
-	    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-	      <stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1" />
-	      <stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" />
-	    </linearGradient>
-	  </defs>
-	</svg>
-    </div>
-
-    <div class="nav nav-overlay">
-        <div class="nav__content">
-            <ul class="nav__list">
-                <li class="nav__list-item"><a href="index.html" class="hover-target">Home</a></li>
-                <li class="nav__list-item"><a href="about.html" class="hover-target">About</a></li>
-                <li class="nav__list-item"><a href="services.html" class="hover-target">Services</a></li>
-                <li class="nav__list-item"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
-                <li class="nav__list-item"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
-                <li class="nav__list-item"><a href="blog.php" class="hover-target">Blog</a></li>
-                <li class="nav__list-item active-nav"><a href="faq.html" class="hover-target">FAQ</a></li>
-                <li class="nav__list-item"><a href="shop.php" class="hover-target">Shop</a></li>
-                <li class="nav__list-item"><a href="cart.php" class="hover-target">Cart</a></li>
-                <li class="nav__list-item"><a href="contact.html" class="hover-target">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <header id="header" class="light">
+<body class="bg-black">
+    <div class="preloader"><svg><g><path d="M 50,100 A 1,1 0 0 1 50,0"/></g><g><path d="M 50,75 A 1,1 0 0 0 50,-25"/></g><defs><linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" /></linearGradient></defs></svg></div>
+    <header id="header" class="dark">
         <div id="header-wrap">
             <nav id="navbar">
+                <!-- Logo -->
                 <div class="main-logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="McCall Southern Photography Logo" style="max-width: 150px; height: auto;">
+                        <img src="images/logo.png" alt="Logo" style="max-width: 150px; height: auto;">
                     </a>
                 </div>
 
+                <!-- Action menu for mobile (Hamburger Icon) -->
+                <!-- <input type="checkbox" id="menu-toggle" class="menu-toggle"> -->
+                <label for="menu-toggle" class="menu-icon">
+                    <i class="fas fa-bars"></i> <!-- Font Awesome hamburger icon -->
+                </label>
 
+                <!-- Navigation List -->
+                <ul class="nav__list">
+                    <li class="navigate"><a href="index.html" class="hover-target">Home</a></li>
+                    <li class="navigate"><a href="about.html" class="hover-target">About</a></li>
+                    <li class="navigate"><a href="services.html" class="hover-target">Services</a></li>
+                    <li class="navigate"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
+                    <li class="navigate"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
+
+                    <!-- Dropdown for Other Pages -->
+                    <li class="navigate dropdown">
+                        <a href="#" class="hover-target">Other Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.php" class="hover-target">Blog</a></li>
+                            <li><a href="faq.html" class="hover-target">FAQ</a></li>
+                            <li><a href="shop.php" class="hover-target">Shop</a></li>
+                            <li><a href="contact.html" class="hover-target">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Cart Icon -->
                 <div class="action-menu">
-                    <input id="menu-toggle" type="checkbox" />
-                    <label class="menu-btn" for="menu-toggle">
-                        <span></span>
-                    </label>
+                    <a href="cart.php" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
                 </div>
-                <!--action-menu-->
             </nav>
         </div>
-        <!--header-wrap-->
     </header>
 
+
+    <!-- FAQ Section -->
     <section class="hero-section">
-
         <div class="hero-content padding-large">
-
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -115,109 +237,181 @@
                 </div>
             </div>
         </div>
-
     </section>
 
     <section id="faq-section" class="scrollspy-section padding-large">
         <div class="container">
-
             <div class="row">
                 <div class="col-md-12">
+                    <!-- FAQ Accordion -->
+                    <div class="faq-accordion">
+                        <h2 class="faq-header">Frequently Asked Questions</h2>
 
-                    <!-- FAQ Grid -->
-                    <div class="faq-grid">
-                        <div class="row">
-
-                            <div class="col-md-6">
-
-                                <article class="faq-item">
-
-                                    <figure>
-                                        <a href="#" class="image-hvr-effect">
-                                            <img src="images/photography.jpg" alt="faq" class="faq-image">
-                                        </a>
-                                    </figure>
-
-                                    <div class="faq-content">
-                                        <h2 class="faq-title"><a href="#">How do I book a photography session?</a></h2>
-                                        <p>You can easily book a session through our online booking form on the "Session Information" page. Select the type of photography service you need, pick a date, and confirm the session with a payment.</p>
-                                    </div>
-                                </article>
-
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I book a photography session?</span>
+                                <i class="plus-icon">+</i>
                             </div>
-
-                            <div class="col-md-6">
-
-                                <article class="faq-item">
-                                    <figure>
-                                        <a href="#" class="image-hvr-effect">
-                                            <img src="images/gallery.jpg" alt="faq" class="faq-image">
-                                        </a>
-                                    </figure>
-                                    <div class="faq-content">
-                                        <h2 class="faq-title"><a href="#">Can I purchase photos online?</a></h2>
-                                        <p>Yes, our online shop offers a variety of images for purchase. Simply browse through the "Galleries" section, add your desired photos to the cart, and complete your purchase using our secure payment gateway.</p>
-                                    </div>
-                                </article>
+                            <div class="faq-answer">
+                                <p>You can easily book a session through our online booking form on the "Session Information" page. Select the type of photography service you need, pick a date, and confirm the session with a payment.</p>
                             </div>
-
-                            <div class="col-md-6">
-
-                                <article class="faq-item">
-
-                                    <figure>
-                                        <a href="#" class="image-hvr-effect">
-                                            <img src="images/support.jpg" alt="faq" class="faq-image">
-                                        </a>
-                                    </figure>
-
-                                    <div class="faq-content">
-                                        <h2 class="faq-title"><a href="single-faq.html">Do you offer customer support?</a></h2>
-                                        <p>Yes, we provide live chat support directly on our website. You can access it through the "Contact" page or by clicking the chat icon located in the bottom right corner of any page.</p>
-                                    </div>
-                                </article>
-
-                            </div>
-
-                            <div class="col-md-6">
-
-                                <article class="faq-item">
-                                    <figure>
-                                        <a href="#" class="image-hvr-effect">
-                                            <img src="images/cropping-tool.jpg" alt="faq" class="faq-image">
-                                        </a>
-                                    </figure>
-                                    <div class="faq-content">
-                                        <h2 class="faq-title"><a href="single-faq.html">Can I crop or edit photos before purchasing?</a></h2>
-                                        <p>Yes, our website offers a built-in cropping tool. Once you choose an image from our gallery, you can adjust the dimensions and framing to fit your needs before completing your purchase.</p>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <div class="col-md-6">
-                                <article class="faq-item">
-                                    <figure>
-                                        <a href="#" class="image-hvr-effect">
-                                            <img src="images/pricing.jpg" alt="faq" class="faq-image">
-                                        </a>
-                                    </figure>
-                                    <div class="faq-content">
-                                        <h2 class="faq-title"><a href="single-faq.html">Where can I find your pricing information?</a></h2>
-                                        <p>We provide detailed pricing information for all our services on the "Pricing" page. You can view package options for weddings, portraits, corporate events, and more.</p>
-                                    </div>
-                                </article>
-                            </div>
-
                         </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can I purchase photos online?</span>
+                                <i class="plus-icon">+</i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, our online shop offers a variety of images for purchase. Simply browse through the "Galleries" section, add your desired photos to the cart, and complete your purchase using our secure payment gateway.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Do you offer customer support?</span>
+                                <i class="plus-icon">+</i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we provide live chat support directly on our website. You can access it through the "Contact" page or by clicking the chat icon located in the bottom right corner of any page.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can I crop or edit photos before purchasing?</span>
+                                <i class="plus-icon">+</i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, our website offers a built-in cropping tool. Once you choose an image from our gallery, you can adjust the dimensions and framing to fit your needs before completing your purchase.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Where can I find your pricing information?</span>
+                                <i class="plus-icon">+</i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We provide detailed pricing information for all our services on the "Pricing" page. You can view package options for weddings, portraits, corporate events, and more.</p>
+                            </div>
+                        </div>
+
+                        <!-- Additional Questions -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is the turnaround time for receiving edited photos?</span>
+                                <i class="plus-icon">+</i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our typical turnaround time for delivering edited photos is 7 to 14 business days, depending on the scope of the project and the number of photos being edited.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can I request specific edits or retouching for my photos?</span>
+                                <i class="plus-icon">+</i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we offer custom editing services! When you book your session or purchase photos, you can provide detailed instructions on the edits or retouching you'd like, and we'll do our best to accommodate your needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Do you offer gift vouchers for photography sessions?</span>
+                                <i class="plus-icon">+</i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We offer gift vouchers that can be redeemed for any of our photography sessions. It’s a perfect gift for birthdays, anniversaries, or any special occasion. You can purchase gift vouchers directly through our website.</p>
+                            </div>
+                        </div>
+
                     </div>
-                    <!-- / FAQ Grid -->
-
+                    <!-- / FAQ Accordion -->
                 </div>
-
             </div>
-
         </div>
     </section>
+
+    <!-- Custom CSS for FAQ Accordion -->
+    <!-- Custom CSS for FAQ Accordion -->
+    <style>
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+            /* Set all text inside the FAQ section to white */
+        }
+        
+        .faq-header {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+            /* Ensure the FAQ header text is white */
+        }
+        
+        .faq-item {
+            background-color: #333;
+            /* Adjust background for better contrast */
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: white;
+            /* Set the FAQ item text to white */
+        }
+        
+        .faq-item:hover {
+            background-color: #444;
+            /* Darker background on hover for contrast */
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            /* Set the question text to white */
+        }
+        
+        .plus-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+            color: white;
+            /* Ensure the plus icon is also white */
+        }
+        
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            color: white;
+            /* Set the answer text to white */
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .plus-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+
+
+    <!-- JavaScript for FAQ Accordion -->
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 
 
     <footer id="footer" class="bg-black light padding-xlarge" style="background-image: url(images/photography.jpg);background-position: right;background-repeat: no-repeat;">

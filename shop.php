@@ -140,48 +140,189 @@ $total_pages = ceil($row[0] / $results_per_page);
         .buy-button:hover {
             background-color: #FF6347;
         }
+       
+        /* General header styles */
+        
+        #header {
+            background-color: #000;
+            padding: 10px 0;
+            color: #fff;
+        }
+        
+        #header-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        /* Logo */
+        
+        .main-logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        /* Navigation list */
+        
+        .nav__list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .navigate {
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        .navigate a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        /* Hover effect for links */
+        
+        .navigate a:hover {
+            color: #1e90ff;
+        }
+        /* Dropdown menu */
+        
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #111;
+            list-style: none;
+            top: 40px;
+            left: 0;
+            padding: 0;
+            z-index: 10;
+        }
+        
+        .dropdown .dropdown-menu li {
+            padding: 10px;
+        }
+        
+        .dropdown .dropdown-menu li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Cart icon styles */
+        
+        .cart-icon {
+            color: #fff;
+            font-size: 24px;
+            padding: 10px;
+        }
+        
+        .cart-icon:hover {
+            color: #1e90ff;
+        }
+        /* Hamburger icon */
+        
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+        }
+        /* Mobile responsiveness */
+        
+        @media (max-width: 768px) {
+            #navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav__list {
+                display: none;
+                /* Hide the menu on mobile by default */
+                flex-direction: column;
+                width: 100%;
+            }
+            .navigate {
+                margin: 10px 0;
+                width: 100%;
+            }
+            .dropdown .dropdown-menu {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+            /* Show the hamburger icon */
+            .menu-icon {
+                display: block;
+            }
+            /* When checkbox is checked, show the menu */
+            .menu-toggle:checked+.menu-icon+.nav__list {
+                display: flex;
+            }
+        }
     </style>
 </head>
 
-<body>
-<div class="nav nav-overlay">
-        <div class="nav__content">
-        <ul class="nav__list">
-                <li class="nav__list-item"><a href="index.html" class="hover-target">Home</a></li>
-                <li class="nav__list-item"><a href="about.html" class="hover-target">About</a></li>
-                <li class="nav__list-item"><a href="services.html" class="hover-target">Services</a></li>
-                <li class="nav__list-item"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
-                <li class="nav__list-item"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
-                <li class="nav__list-item"><a href="blog.php" class="hover-target">Blog</a></li>
-                <li class="nav__list-item"><a href="faq.html" class="hover-target">FAQ</a></li>
-                <li class="nav__list-item active-nav"><a href="shop.php" class="hover-target">Shop</a></li>
-                <li class="nav__list-item"><a href="cart.php" class="hover-target">Cart</a></li>
-                <li class="nav__list-item"><a href="contact.html" class="hover-target">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <header id="header" class="light">
+<body class="bg-black">
+    <div class="preloader"><svg><g><path d="M 50,100 A 1,1 0 0 1 50,0"/></g><g><path d="M 50,75 A 1,1 0 0 0 50,-25"/></g><defs><linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" /></linearGradient></defs></svg></div>
+    <header id="header" class="dark">
         <div id="header-wrap">
             <nav id="navbar">
+                <!-- Logo -->
                 <div class="main-logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="McCall Southern Photography Logo" style="max-width: 150px; height: auto;">
+                        <img src="images/logo.png" alt="Logo" style="max-width: 150px; height: auto;">
                     </a>
                 </div>
 
+                <!-- Action menu for mobile (Hamburger Icon) -->
+                <!-- <input type="checkbox" id="menu-toggle" class="menu-toggle"> -->
+                <label for="menu-toggle" class="menu-icon">
+                    <i class="fas fa-bars"></i> <!-- Font Awesome hamburger icon -->
+                </label>
 
+                <!-- Navigation List -->
+                <ul class="nav__list">
+                    <li class="navigate"><a href="index.html" class="hover-target">Home</a></li>
+                    <li class="navigate"><a href="about.html" class="hover-target">About</a></li>
+                    <li class="navigate"><a href="services.html" class="hover-target">Services</a></li>
+                    <li class="navigate"><a href="portfolio.html" class="hover-target">Portfolio</a></li>
+                    <li class="navigate"><a href="testimonials.html" class="hover-target">Testimonials</a></li>
+
+                    <!-- Dropdown for Other Pages -->
+                    <li class="navigate dropdown">
+                        <a href="#" class="hover-target">Other Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.php" class="hover-target">Blog</a></li>
+                            <li><a href="faq.html" class="hover-target">FAQ</a></li>
+                            <li><a href="shop.php" class="hover-target">Shop</a></li>
+                            <li><a href="contact.html" class="hover-target">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Cart Icon -->
                 <div class="action-menu">
-                    <input id="menu-toggle" type="checkbox" />
-                    <label class="menu-btn" for="menu-toggle">
-                        <span></span>
-                    </label>
+                    <a href="cart.php" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
                 </div>
-                <!--action-menu-->
             </nav>
         </div>
-        <!--header-wrap-->
     </header>
+
 
     <div class="shop-container">
     <h1>Shop Our Photography</h1>
@@ -196,9 +337,10 @@ $total_pages = ceil($row[0] / $results_per_page);
 
                 <!-- Add to cart form -->
                 <form action="add_to_cart.php" method="POST">
-                    <input type="hidden" name="photo_id" value="<?php echo $row['id']; ?>">
-                    <input type="hidden" name="photo_title" value="<?php echo $row['title']; ?>">
-                    <input type="hidden" name="photo_price" value="<?php echo $row['price']; ?>">
+                    <input type="hidden" name="photo_id" value="1">
+                    <input type="hidden" name="photo_title" value="Event Memories">
+                    <input type="hidden" name="photo_price" value="175.00">
+                    <input type="hidden" name="photo_url" value="<?php echo $row['photo_url']; ?>"> <!-- Pass Image URL -->
                     <button class="buy-button" type="submit">Add to Cart</button>
                 </form>
             </div>
