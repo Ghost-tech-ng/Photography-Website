@@ -319,7 +319,7 @@ if (isset($_GET['clear_cart'])) {
                 <!-- Logo -->
                 <div class="main-logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="Logo" style="max-width: 150px; height: auto;">
+                        <img src="images/logo.png" alt="Logo" style="max-width: 250px; height: 200px;">
                     </a>
                 </div>
 
