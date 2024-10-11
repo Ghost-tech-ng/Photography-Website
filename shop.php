@@ -306,6 +306,7 @@ $total_pages = ceil($row[0] / $results_per_page);
                         <a href="#" class="hover-target">Other Pages</a>
                         <ul class="dropdown-menu">
                             <li><a href="blog.php" class="hover-target">Blog</a></li>
+                            <li><a href="cropping.html" class="hover-target">Cropping</a></li>
                             <li><a href="faq.html" class="hover-target">FAQ</a></li>
                             <li><a href="shop.php" class="hover-target">Shop</a></li>
                             <li><a href="contact.html" class="hover-target">Contact</a></li>
